@@ -5,7 +5,35 @@ public class Solution
     // use the same element twice. Any order is fine: [0, 1] or [1, 0].
     public int[] TwoSum(int[] nums, int target)
     {
-        // your code here
-        throw new NotImplementedException();
+        Dictionary <int,int> dict = new Dictionary<int, int>(); // initialize a dict
+        int difference; // initialize difference var
+        for (int i = 0; i < nums.Length; i++) // load the dict
+        {
+            dict.Add(nums[i], i); // look here
+        }
+
+        for (int j = 0; j < nums.Length; j++) // check if two numbers in the array add up to the target
+        {
+            int x = nums[j]; // for first run: first val x is the first index of the dict's val, then indexes up
+            while (true)
+            {
+                difference = target - x; // difference of target minus the current val in the array/dict
+
+                if (!dict.TryGetValue(difference, out int result)) // if the difference val doesnt exist in the dict, break and try next index
+                {
+                    break;
+                } else {
+                    if (result == j) // identifies if the index matches current index (can only use num once)
+                    {
+                        break;
+                    } else
+                    {
+                        return new int [] {j, result}; // if it does exist, return the current index in the array the the difference's index
+                    }
+                }
+            }
+        }
+
+        return new int [] {-1, -1}; // if it goes through the entire array and nothing exists, return "null" (basically)
     }
 }
