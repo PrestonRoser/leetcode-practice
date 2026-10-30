@@ -3,6 +3,9 @@ using System.Diagnostics;
 // Test harness: runs every case, prints what came back, then a summary.
 // Run with: dotnet run
 
+// Set to true to run the 200,000-item efficiency test after the correctness cases.
+bool runEfficiency = true;
+
 var cases = new (string Name, int[] Nums, int Target)[]
 {
     // the three LeetCode examples
@@ -47,6 +50,12 @@ foreach (var (name, nums, target) in cases)
 }
 
 Console.WriteLine($"\n{passed}/{cases.Length} correctness cases passed");
+
+if (!runEfficiency)
+{
+    Console.WriteLine("\nefficiency test skipped (runEfficiency = false at the top of Program.cs)");
+    return passed == cases.Length ? 0 : 1;
+}
 
 // Efficiency: 200,000 numbers, and the only pair that works is at the very end.
 // A nested-loop solution checks ~20 billion pairs here; a one-pass solution is instant.

@@ -7,5 +7,7 @@
     "editor.inlineSuggest.enabled": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.snippetSuggestions": "none",
-    "github.copilot.enable": { "*": false }
+    "github.copilot.enable": { "*": false },
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "chat.disableAIFeatures": true
 }
