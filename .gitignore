@@ -1,4 +1,22 @@
-__pycache__/
+# .NET build output
 bin/
 obj/
+TestResults/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and OS
+# (.vscode/settings.json is tracked on purpose: it turns off autocomplete and AI suggestions)
+.vs/
+.idea/
+*.swp
 .DS_Store
+
+# Local AI tool state
+.claude/
