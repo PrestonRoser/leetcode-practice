@@ -1,5 +1,7 @@
 # LeetCode Practice
 
+[![tests](https://github.com/PrestonRoser/leetcode-practice/actions/workflows/tests.yml/badge.svg)](https://github.com/PrestonRoser/leetcode-practice/actions/workflows/tests.yml)
+
 Timed LeetCode practice, mostly in C#, with a local test harness for every problem so a solution can be run and debugged in VS Code before it's submitted. Every attempt is kept, including the slow and broken ones, so each problem's README shows the approaches it went through on the way to the current solution.
 
 > [!NOTE]
@@ -78,7 +80,7 @@ Copy a problem folder, replace the body of the solution method with `throw new N
   ./scripts/test-all.sh        # every harness in the repo; exits 1 if any fail
   git switch main && git merge --ff-only dev && git switch dev   # only on green
   ```
-  On GitHub, the same rule runs as a pull request from `dev` to `main`.
+  On GitHub, a ruleset on `main` enforces this: it accepts only commits that already passed CI on `dev`, and it blocks force pushes and deletion. A pull request from `dev` to `main` works too.
 - **CI:** `.github/workflows/tests.yml` runs `scripts/test-all.sh` on every push to `dev` or `main` and on pull requests into `main`, on GitHub's Ubuntu runner with .NET 9 and Python 3.12. It picks up any `<problem>/csharp/*.csproj` and `<problem>/python/test_*.py`, so a new problem needs no CI changes.
 - **Side branches are optional.** To try a risky alternate approach without disturbing `dev`, branch off `dev`, tag the attempt when it's done, merge it if it wins, and delete the branch.
 - Each problem's README lists every attempt's approach, complexity, outcome, and tag, with earlier attempts' code collapsed underneath, so the history is readable without git.
