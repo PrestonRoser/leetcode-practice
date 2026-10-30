@@ -4,7 +4,19 @@ public class Solution
     // least twice, and false if every value is distinct.
     public bool ContainsDuplicate(int[] nums)
     {
-        // your code here
-        throw new NotImplementedException();
+        HashSet<int> set = new HashSet<int>();
+        bool added;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            added = set.Add(nums[i]); 
+
+            if (!added)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
