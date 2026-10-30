@@ -1,0 +1,11 @@
+{
+    // Practice mode: no autocomplete or AI suggestions. Errors still show.
+    "editor.quickSuggestions": { "other": "off", "comments": "off", "strings": "off" },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.snippetSuggestions": "none",
+    "github.copilot.enable": { "*": false }
+}
