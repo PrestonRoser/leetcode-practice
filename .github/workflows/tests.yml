@@ -1,0 +1,23 @@
+name: tests
+
+# dev: every push is tested, red is fine while an attempt is in progress.
+# main: only reached by merging dev, and the merge should only happen on green.
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: ./scripts/test-all.sh
