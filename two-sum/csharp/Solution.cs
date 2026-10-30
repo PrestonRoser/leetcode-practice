@@ -9,7 +9,7 @@ public class Solution
         int difference; // initialize difference var
         for (int i = 0; i < nums.Length; i++) // load the dict
         {
-            dict.Add(nums[i], i); // look here
+            dict[nums[i]] = i; // replaces duplicate variables with the last instance of it within the array
         }
 
         for (int j = 0; j < nums.Length; j++) // check if two numbers in the array add up to the target
