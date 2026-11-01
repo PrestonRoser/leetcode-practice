@@ -30,6 +30,7 @@ How that stays true:
 | [Two Sum](two-sum/csharp/) | C# | `Dictionary<int, int>` from value to index | O(n) / O(n) | ✅ 6 ms |
 | [Two Sum](two-sum/python/) | Python | nested loops (brute force) | O(n²) / O(n) | — |
 | [Contains Duplicate](contains-duplicate/csharp/) | C# | `HashSet<int>`, one pass with early exit | O(n) / O(n) | ✅ 19 ms |
+| [Valid Parentheses](valid-parentheses/csharp/) | C# | `Stack<char>`, one pass with a `switch` | O(n) / O(n) | ✅ 2 ms |
 
 ## Getting started
 
@@ -72,6 +73,7 @@ Copy a problem folder, replace the body of the solution method with `throw new N
   | `two-sum/cs-3-dict-list` | `Dictionary<int, List<int>>`, accepted, 9 ms / 53.4 MB |
   | `two-sum/cs-2b-dict-overwrite` | `Dictionary<int, int>` with `dict[key] = i`, accepted, 6 ms / 49.65 MB · **on `main`** |
   | `contains-duplicate/cs-1-hashset-add` | `HashSet<int>.Add`, one pass, accepted, 19 ms / 76.25 MB · **on `main`** |
+  | `valid-parentheses/cs-1-stack-switch` | `Stack<char>` with a `switch`, one pass, accepted, 2 ms / 40.97 MB · **on `main`** |
 
   `git tag -l -n1` lists them, and `git show <tag>:two-sum/csharp/Solution.cs` prints one without switching branches.
 - **`dev` is where work happens; `main` is the finished side.** Attempts, new problem stubs, and half-done work are committed to `dev`, where a failing test run is expected mid-attempt. `main` only moves by merging `dev` into it once every harness passes, so a stub or a broken attempt never lands there.
@@ -87,11 +89,10 @@ Copy a problem folder, replace the body of the solution method with `throw new N
 
 ## Queue
 
-1. Valid Parentheses
-2. Valid Anagram
-3. Best Time to Buy and Sell Stock
-4. Binary Search
-5. Group Anagrams
+1. Valid Anagram
+2. Best Time to Buy and Sell Stock
+3. Binary Search
+4. Group Anagrams
 
 ## Credits
 

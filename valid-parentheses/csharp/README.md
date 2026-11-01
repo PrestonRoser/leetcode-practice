@@ -12,6 +12,7 @@ String · Stack
 
 | # | Approach | Time / space | Outcome | LeetCode | Tag |
 |:-:|---|---|---|---|---|
+| 1 | `Stack<char>`, one pass with a `switch`: openers are pushed, and each closer pops and must match | O(n) / O(n) | accepted | ✅ 2 ms · 40.97 MB | `valid-parentheses/cs-1-stack-switch` · **current** |
 
 LeetCode's runtime and memory figures vary between submissions, so treat them as rough.
 
